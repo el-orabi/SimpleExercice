@@ -1,14 +1,11 @@
 package com.company;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
-public class VitreElectrique extends Vehicule {
+public class VitreElectrique implements Option {
 
-    public VitreElectrique(Double prix, String nom, List<Option> options, Marque nomMarque) {
-        super(prix, nom, options, nomMarque);
-    }
-
-    public VitreElectrique(){
-
+    public VitreElectrique() {
+        System.out.println("VitreElectrique (213.5 $)");
     }
 }

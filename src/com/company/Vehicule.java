@@ -1,20 +1,21 @@
 package com.company;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Vehicule {
+public class Vehicule extends Moteur {
 
-    /*les attribus*/
 
-    private Double prix;
-    private String nom;
-    private List<Option> options;
-    private Marque nomMarque;
+    protected Double prix;
+    protected String nom;
+    protected List<Option> options = new ArrayList<>();
+    protected Marque nomMarque;
 
-    public Vehicule( Double prix, String nom, List<Option> options, Marque nomMarque){
+    public Vehicule(String cylindre, Double prix, TypeMoteur type, Double prix1, String nom, List<Option> options, Marque nomMarque) {
+        super(cylindre, prix, type);
+        this.prix = prix1;
+        this.nom = nom;
         this.options = options;
         this.nomMarque = nomMarque;
-        this.nom = nom;
-        this.prix = prix;
     }
     public Vehicule(){
 
@@ -32,8 +33,8 @@ public class Vehicule {
         return nomMarque;
     }
 
-    public void addOption( Option opt){
-        options.add(opt);
+    public void addOption( Option options){
+        this.options.add(options);
     }
 
     public String toString() {
